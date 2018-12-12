@@ -11,7 +11,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Running the project
 
-This is a very simple project. It should be started only calling the module logs_analysis.py.
+Running this project requires Python 3 and PostgreSQL to be installed on the target system. Besides, the file newsdata.sql must also be downloaded and loaded into the database. This file is only available for students of the Nanodegree Progam.
+
+Once the the steps above are completed, you are good to run the main script. 
 
 In your console, change dir. to the folder where the project was forked and run the following command:
 
