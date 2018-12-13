@@ -67,7 +67,7 @@ Once you've downloaded and installed the Vagrant VM, you're ready to run the scr
 
 4. Make sure you've cloned this repository in your local machine inside the **vagrant** folder
 
-5. Import the sample data to the PostgreSQL database: `psql -d news -f newsdata.sql`
+5. Import the [newsdata.sql](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) to the PostgreSQL database: `psql -d news -f newsdata.sql`
 
 6. Access the folder where the **logs_analysis.py** is located and run it with **python3 logs_analysis.py**
 
