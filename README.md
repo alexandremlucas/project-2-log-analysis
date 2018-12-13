@@ -10,9 +10,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Understanding the project
 
-The PostgreSQL database contais fictional data from a news website.
+It was provided a PostgreSQL database containing fictional data from a news website.
 
-The sample database constists in three tables:
+This sample database constists in three tables:
 
 * **articles**: contains the publicized articles with its details
 * **authors**: contains the author data and its bio
