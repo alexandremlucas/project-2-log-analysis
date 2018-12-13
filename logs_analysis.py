@@ -34,10 +34,10 @@ def get_top_articles():
     query = """
         SELECT title, COUNT(*) AS accesses
         FROM articles, log
-        WHERE slug=replace(path,'/article/','') 
-        AND path != '/' 
-        GROUP BY title 
-        ORDER BY count(*) DESC 
+        WHERE slug=replace(path,'/article/','')
+        AND path != '/'
+        GROUP BY title
+        ORDER BY count(*) DESC
         LIMIT 3
     """
     print("1. What are the most popular three articles of all time?\n")
@@ -47,16 +47,16 @@ def get_top_articles():
 
 
 def get_top_authors():
-    """It print the rank of most popular authors based on the accesses 
+    """It print the rank of most popular authors based on the accesses
         to their articles.
     """
     query = """
         SELECT name, COUNT(*) AS total
-        FROM articles, log, authors 
-        WHERE authors.id=articles.author 
-        AND slug=replace(path,'/article/','') 
-        AND path != '/' 
-        GROUP BY name 
+        FROM articles, log, authors
+        WHERE authors.id=articles.author
+        AND slug=replace(path,'/article/','')
+        AND path != '/'
+        GROUP BY name
         ORDER BY COUNT(*) DESC
     """
     print("\n2. Who are the most popular article authors of all time?\n")
@@ -69,12 +69,12 @@ def get_day_errors():
     """It prints out the days where more than 1% of accesses were errors.
     """
     query = """
-        SELECT to_char(_.date, 'FMMonth DD, YYYY') AS log_date, 
+        SELECT to_char(_.date, 'FMMonth DD, YYYY') AS log_date,
                round(_.error * 100,2)::numeric AS percent_error
-        FROM (SELECT date(time), 
-                     AVG(CASE WHEN status = '200 OK' THEN 0 ELSE 1 END) AS error 
-              FROM log 
-              GROUP BY date(time)) as _ 
+        FROM (SELECT date(time),
+               AVG(CASE WHEN status = '200 OK' THEN 0 ELSE 1 END) AS error
+              FROM log
+              GROUP BY date(time)) as _
         WHERE error >= 0.01;
     """
     print("\n3. On which days did more than 1% of requests lead to errors?\n")
